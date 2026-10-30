@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adel Atef Emam | Shopify Store Design &amp; Development</title>
+<meta name="description" content="Shopify store design and development for growing brands. Explore real storefront projects, theme customization, product presentation, and Arabic RTL development.">
+<link rel="canonical" href="https://adelatefemam.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Adel Atef Emam">
+<meta property="og:title" content="Adel Atef Emam | Shopify Store Design &amp; Development">
+<meta property="og:description" content="Shopify store design and development for growing brands. Explore real storefront projects, theme customization, product presentation, and Arabic RTL development.">
+<meta property="og:url" content="https://adelatefemam.github.io/">
+<meta property="og:image" content="https://adelatefemam.github.io/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Adel Atef Emam, Shopify Developer">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_EG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Adel Atef Emam | Shopify Store Design &amp; Development">
+<meta name="twitter:description" content="Shopify store design and development for growing brands. Explore real storefront projects, theme customization, product presentation, and Arabic RTL development.">
+<meta name="twitter:image" content="https://adelatefemam.github.io/og-image.jpg">
+<meta name="theme-color" content="#0a0405">
+<link rel="icon" type="image/png" href="DATA_URI" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="DATA_URI" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="DATA_URI">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0405;
+  --rose:#e9b8a3;
+  --red:#c2182f;
+  --red-hi:#d81f3a;
+  --text:#f6ecee;
+  --muted:#bba7ab;
+  --surface:rgba(255,255,255,.045);
+  --surface-2:rgba(255,255,255,.075);
+  --line:rgba(255,255,255,.11);
+  --line-2:rgba(255,255,255,.2);
+  --radius:20px;
+  --hdr:68px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 16px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'Almarai',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
+  color:var(--text);background:var(--bg);
+  line-height:1.75;overflow-x:hidden;min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 0% 0%,#0a0405,#3d0b12,#0a0405)}
+html[lang=ar] body{line-height:1.9}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;inset-inline-start:12px;top:-80px;z-index:100;background:var(--text);color:#1a0508;padding:10px 18px;border-radius:10px;font-weight:700;transition:top .2s}
+.skip:focus{top:12px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section{padding:72px 0}
+h1,h2,h3{font-weight:800;line-height:1.2}
+html[lang=en] h1,html[lang=en] h2{letter-spacing:-.02em}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{line-height:1.45}
+.eyebrow{color:var(--rose);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+html[lang=ar] .eyebrow{letter-spacing:0;font-size:.92rem;text-transform:none}
+.h2{font-size:clamp(1.75rem,3.6vw,2.55rem);margin-bottom:14px}
+.sub{color:var(--muted);max-width:660px;margin-bottom:36px}
+.sec-head{margin-bottom:30px}
+.sec-head .sub{margin-bottom:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;border-radius:999px;font:inherit;font-weight:700;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;text-align:center}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--red);color:#fff;box-shadow:0 10px 28px -12px rgba(194,24,47,.9)}
+.btn-wa:hover{background:var(--red-hi);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line-2);background:rgba(255,255,255,.04)}
+.btn-ghost:hover{border-color:var(--rose);transform:translateY(-2px)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:.92rem}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(10,4,5,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;gap:18px;height:var(--hdr)}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{height:38px;width:auto}
+.brand span{font-size:.82rem;font-weight:700;color:var(--rose);line-height:1.25;padding-inline-start:12px;border-inline-start:1px solid var(--line-2)}
+.nav{display:flex;gap:28px;margin-inline:auto;color:var(--muted);font-size:.95rem}
+.nav a{padding:6px 2px;transition:color .2s}
+.nav a:hover{color:var(--text)}
+.hdr-actions{display:flex;align-items:center;gap:10px}
+.lang{min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);color:var(--text);font:inherit;font-weight:700;font-size:.92rem;cursor:pointer;transition:border-color .2s}
+.lang:hover{border-color:var(--rose)}
+.menu-btn{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line-2);background:var(--surface);cursor:pointer;place-items:center;position:relative}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;position:absolute;transition:transform .2s,opacity .2s}
+.menu-btn span::before,.menu-btn span::after{content:""}
+.menu-btn span::before{transform:translateY(-6px)}
+.menu-btn span::after{transform:translateY(6px)}
+.menu-btn[aria-expanded=true] span{background:transparent}
+.menu-btn[aria-expanded=true] span::before{transform:rotate(45deg)}
+.menu-btn[aria-expanded=true] span::after{transform:rotate(-45deg)}
+@media(max-width:900px){
+  .menu-btn{display:grid}
+  .hdr-actions{margin-inline-start:auto}
+  .nav{display:none;position:absolute;top:var(--hdr);inset-inline:0;flex-direction:column;gap:0;margin:0;padding:6px 20px 16px;background:rgba(10,4,5,.97);border-bottom:1px solid var(--line)}
+  .nav.open{display:flex}
+  .nav a{padding:15px 4px;border-bottom:1px solid var(--line);font-size:1rem}
+  .nav a:last-child{border-bottom:0}
+}
+@media(max-width:560px){.brand span{display:none}.btn-sm{padding:0 14px}}
+
+/* hero */
+.hero{padding:56px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center}
+.hero h1{font-size:clamp(2.15rem,5vw,3.55rem);margin-bottom:20px}
+.lead{font-size:1.1rem;color:#e6d8db;max-width:540px;margin-bottom:14px}
+.cred{color:var(--muted);max-width:540px;margin-bottom:30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:.84rem;color:var(--rose);border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 14px}
+.hv{position:relative}
+.hv-stage{position:relative;aspect-ratio:900/619}
+.hv-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .8s ease;filter:drop-shadow(0 20px 26px rgba(0,0,0,.5))}
+.hv-img.on{opacity:1}
+.hv-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:10px;padding-inline:4px}
+.hv-cap{font-size:.9rem;font-weight:700;color:var(--text);border-bottom:1px solid var(--line-2);padding-bottom:1px}
+.hv-cap:hover{border-color:var(--rose)}
+.hv-dots{display:flex;gap:4px}
+.hv-dots button{width:30px;height:30px;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.hv-dots button::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--line-2);transition:background .2s,transform .2s}
+.hv-dots button[aria-current=true]::before{background:var(--rose);transform:scale(1.25)}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:28px}.hero{padding-top:36px}}
+
+/* generic cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid3{grid-template-columns:1fr}}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:border-color .25s,transform .25s}
+.svc:hover{border-color:rgba(233,184,163,.45);transform:translateY(-4px)}
+.svc h3{font-size:1.12rem;margin-bottom:12px}
+.ticks li{position:relative;padding-inline-start:30px;color:var(--muted);font-size:.95rem;margin-bottom:8px}
+.ticks li::before{content:"";position:absolute;inset-inline-start:0;top:.42em;width:19px;height:19px;border-radius:50%;background:rgba(233,184,163,.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e9b8a3' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+.note{color:var(--muted);font-size:.9rem;margin-top:22px}
+
+/* selected work */
+.projs{display:grid;gap:22px}
+.proj{display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:30px}
+.proj:nth-child(even) .proj-media{order:2}
+.proj-media{background:rgba(255,255,255,.035);border-radius:18px;padding:22px}
+.proj-media img{width:100%;height:auto;aspect-ratio:900/619;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,0,0,.45))}
+.kicker{color:var(--rose);font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+html[lang=ar] .kicker{letter-spacing:0;text-transform:none;font-size:.92rem}
+.proj h3{font-size:clamp(1.25rem,2.4vw,1.65rem);margin-bottom:12px}
+.proj p.desc{color:#d9c9cc;margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tags li{font-size:.82rem;border:1px solid var(--line-2);border-radius:999px;padding:3px 12px;color:var(--text)}
+.facts{display:grid;gap:6px;margin-bottom:22px;font-size:.92rem}
+.facts div{display:flex;gap:10px}
+.facts dt{color:var(--muted);min-width:84px}
+.facts dd{font-weight:700}
+@media(max-width:860px){
+  .proj{grid-template-columns:1fr;padding:20px;gap:20px}
+  .proj:nth-child(even) .proj-media{order:0}
+  .proj-media{padding:12px}
+}
+
+/* brand logos marquee */
+.brands-sec{padding:6px 0 4px}
+.brands-eyebrow{text-align:center;margin-bottom:18px}
+.logo-marquee{overflow:hidden;direction:ltr;padding:4px 0 2px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.logo-track{display:flex;width:max-content;animation:logoScroll 46s linear infinite}
+.logo-marquee:hover .logo-track{animation-play-state:paused}
+.logo-set{display:flex;gap:14px;padding-right:14px;align-items:stretch}
+.logo-chip{flex:none;height:78px;padding:14px 24px;background:#f7f1ec;border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.07);box-shadow:0 10px 24px -14px rgba(0,0,0,.6)}
+.logo-chip img{height:100%;max-height:50px;width:auto;object-fit:contain}
+@keyframes logoScroll{to{transform:translateX(-50%)}}
+@media(max-width:600px){.logo-chip{height:62px;padding:10px 16px}.logo-chip img{max-height:40px}.logo-set{gap:10px;padding-right:10px}}
+
+/* more active stores (compact grid) */
+.stats{color:var(--muted);font-size:.95rem;margin:-14px 0 30px}
+.mini-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.mini{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .25s,transform .25s}
+.mini:hover{border-color:rgba(233,184,163,.45);transform:translateY(-4px)}
+.mini-media{display:block;aspect-ratio:1;background:rgba(255,255,255,.05);border-bottom:1px solid var(--line)}
+.mini-media img{width:100%;height:100%;object-fit:cover}
+.mini-body{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:14px 14px 16px}
+.mini-logo{height:34px;width:auto;max-width:100%;object-fit:contain;background:#f7f1ec;border-radius:9px;padding:5px 10px}
+.mini-name{font-weight:800;font-size:1.02rem;line-height:1.3}
+.mini-visit{margin-top:auto;color:var(--rose);font-size:.9rem;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.mini:hover .mini-visit{text-decoration:underline}
+@media(max-width:1024px){.mini-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.mini-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.mini-grid{grid-template-columns:1fr}}
+
+/* why */
+.why{display:grid;grid-template-columns:.78fr 1.22fr;gap:36px;align-items:start}
+.me{text-align:center;padding:26px 22px 28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.me-photo{width:min(250px,72%);margin:0 auto -22px;aspect-ratio:1}
+.me-photo img{width:100%;height:100%;object-fit:contain}
+.me-name{font-weight:800;font-size:1.3rem;position:relative}
+.me-role{color:var(--rose);font-weight:700}
+.me-loc{color:var(--muted);font-size:.9rem;margin-top:6px}
+.social{display:flex;justify-content:center;gap:12px;margin-top:18px}
+.social a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-2);background:var(--surface);color:var(--text);transition:border-color .2s,color .2s,transform .2s}
+.social a:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-3px)}
+.social svg{width:21px;height:21px}
+.social .be{font-weight:800;font-size:1.05rem;line-height:1;letter-spacing:-.02em}
+.why .ticks li{color:var(--text);font-size:1.02rem;padding-block:14px;margin:0;border-bottom:1px solid var(--line)}
+.why .ticks li::before{top:1.15em}
+.why .ticks li:last-child{border-bottom:0}
+@media(max-width:860px){.why{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px}
+.step b{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(233,184,163,.14);color:var(--rose);font-size:.95rem;margin-bottom:14px}
+.step h3{font-size:1.02rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.9rem;line-height:1.65}
+.pay{display:inline-block;margin-top:20px;border:1px solid var(--line-2);background:var(--surface);border-radius:14px;padding:12px 18px;font-weight:700}
+
+/* reviews */
+#reviews{padding-inline:0}
+.center{text-align:center}
+.center .sub{margin-inline:auto}
+.rev-stage{position:relative}
+.rev-wrap{overflow-x:auto;overflow-y:hidden;direction:ltr;padding:12px 0;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rev-wrap::-webkit-scrollbar{display:none}
+.rev-wrap.dragging{cursor:grabbing;user-select:none}
+.rev-track{display:flex;width:max-content}
+.rev{flex:none;height:380px;margin-right:18px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface);transition:border-color .3s}
+.rev:hover{border-color:rgba(233,184,163,.5)}
+.rev img{height:100%;width:100%;display:block;pointer-events:none;-webkit-user-drag:none;user-select:none}
+@media(max-width:600px){.rev{height:300px}}
+.rev-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);background:rgba(10,4,5,.78);backdrop-filter:blur(8px);color:var(--text);font-size:1.7rem;line-height:1;cursor:pointer;transition:.2s;display:grid;place-items:center;padding-bottom:4px}
+.rev-btn:hover{border-color:var(--rose)}
+.rev-btn.prev{left:16px}
+.rev-btn.next{right:16px}
+@media(max-width:600px){.rev-btn{width:38px;height:38px;font-size:1.4rem}.rev-btn.prev{left:8px}.rev-btn.next{right:8px}}
+#lb{position:fixed;inset:0;z-index:100;background:rgba(10,4,5,.92);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+
+/* investment */
+.invest{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;padding:40px;background:var(--surface);border:1px solid var(--line);border-radius:26px;align-items:start}
+.invest p{color:#d9c9cc;margin-bottom:22px;max-width:520px}
+.invest h3{font-size:1rem;margin-bottom:14px;color:var(--rose)}
+.lic{margin-top:18px;padding:14px 16px;border-radius:14px;border:1px solid rgba(233,184,163,.35);background:rgba(233,184,163,.07);font-size:.93rem}
+@media(max-width:860px){.invest{grid-template-columns:1fr;padding:24px;gap:24px}}
+
+/* faq */
+.faq-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:48px;align-items:start}
+.faq-layout .sec-head{position:sticky;top:calc(var(--hdr) + 28px)}
+@media(max-width:860px){.faq-layout{grid-template-columns:1fr;gap:6px}.faq-layout .sec-head{position:static}}
+.faq{display:grid;gap:12px}
+details{border:1px solid var(--line);border-radius:16px;background:var(--surface);transition:border-color .2s}
+details[open]{border-color:rgba(233,184,163,.4)}
+summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--rose);flex:none}
+details[open] summary::after{content:"\2013"}
+details p{padding:0 22px 20px;color:var(--muted)}
+
+/* final cta */
+.final{text-align:center;padding:52px 28px;background:var(--surface);border:1px solid var(--line);border-radius:28px}
+.final .h2{max-width:720px;margin-inline:auto}
+.final .sub{margin-inline:auto;margin-bottom:28px}
+.mail{display:inline-block;margin-top:20px;color:var(--muted);font-size:.95rem;border-bottom:1px solid var(--line-2)}
+.mail:hover{color:var(--text);border-color:var(--rose)}
+.mail bdi{direction:ltr}
+footer{padding:30px 0 40px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot a:hover{color:var(--text)}
+
+/* floating whatsapp (mobile/tablet only) */
+#waFloat{position:fixed;inset-inline-end:14px;bottom:14px;z-index:60;width:54px;height:54px;border-radius:50%;background:var(--red);color:#fff;display:none;place-items:center;box-shadow:0 14px 30px -10px rgba(194,24,47,.8);transition:opacity .25s,transform .25s}
+#waFloat svg{width:27px;height:27px}
+#waFloat.hide{opacity:0;pointer-events:none;transform:translateY(10px)}
+@media(max-width:899px){#waFloat{display:grid}}
+@media(max-width:360px){#waFloat{width:50px;height:50px;inset-inline-end:10px;bottom:10px}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:700px){section{padding:52px 0}.final{padding:40px 20px}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .hv-img{transition:none}
+  .svc:hover,.btn:hover,.social a:hover,.mini:hover{transform:none}
+  .logo-track{animation:none}
+  .logo-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  #waFloat{transition:none}
+}
+</style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="Adel Atef Emam"><img src="DATA_URI" alt="" width="44" height="38"><span data-i18n="brand_role">Shopify Developer</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#work" data-i18n="nav_work">Selected Work</a>
+      <a href="#process" data-i18n="nav_process">Process</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+    <div class="hdr-actions">
+      <button class="lang" id="langBtn" type="button" lang="ar">العربية</button>
+      <a class="btn btn-wa btn-sm js-wa" href="https://wa.me/201004943581?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%83%D9%84%D9%85%20%D9%85%D8%B9%D8%A7%D9%83%20%D8%B9%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%B4%D9%88%D8%A8%D9%8A%D9%81%D8%A7%D9%8A.%20%D9%85%D9%85%D9%83%D9%86%20%D9%86%D9%86%D8%A7%D9%82%D8%B4%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%D8%9F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="wa_short">WhatsApp</span></a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-attr="aria-label:menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow" data-i18n="hero_eyebrow">Shopify Developer</p>
+      <h1 data-i18n="hero_h1">Shopify Store Design &amp; Development for Growing Brands</h1>
+      <p class="lead" data-i18n="hero_lead">I design and develop Shopify stores tailored to your brand, with thoughtful product presentation, responsive design, and custom functionality when needed.</p>
+      <p class="cred" data-i18n="hero_cred">My portfolio includes fashion brands, and I work with businesses across different e-commerce niches.</p>
+      <div class="btns">
+        <a class="btn btn-wa js-wa" href="https://wa.me/201004943581?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%83%D9%84%D9%85%20%D9%85%D8%B9%D8%A7%D9%83%20%D8%B9%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%B4%D9%88%D8%A8%D9%8A%D9%81%D8%A7%D9%8A.%20%D9%85%D9%85%D9%83%D9%86%20%D9%86%D9%86%D8%A7%D9%82%D8%B4%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%D8%9F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="cta_primary">Discuss Your Project on WhatsApp</span></a>
+        <a class="btn btn-ghost" href="#work" data-i18n="cta_secondary">View Selected Work</a>
+      </div>
+      <ul class="chips">
+        <li data-i18n="chip1">Fashion e-commerce portfolio</li>
+        <li data-i18n="chip2">Open to any e-commerce niche</li>
+        <li data-i18n="chip3">Arabic &amp; English · RTL support</li>
+      </ul>
+    </div>
+    <div class="hv">
+      <div class="hv-stage">
+        <img class="hv-img on" data-p="nala" alt="NALA Kids Shopify store shown on a laptop and a phone" width="900" height="619" data-i18n-attr="alt:alt_p1">
+        <img class="hv-img" data-p="hibtam" alt="HIBTAM Shopify store shown on a laptop and a phone" width="900" height="619" data-i18n-attr="alt:alt_p2">
+        <img class="hv-img" data-p="ciel" alt="CIEL Shopify store shown on a laptop and a phone" width="900" height="619" data-i18n-attr="alt:alt_p3">
+        <img class="hv-img" data-p="moveon" alt="MOVEON Shopify store shown on a laptop and a phone" width="900" height="619" data-i18n-attr="alt:alt_p4">
+      </div>
+      <div class="hv-bar">
+        <a class="hv-cap" id="hvCap" href="#p-nala">NALA Kids · Horizon theme</a>
+        <div class="hv-dots" role="group" aria-label="Featured projects" data-i18n-attr="aria-label:hv_group">
+          <button type="button" aria-label="NALA Kids" aria-current="true"></button>
+          <button type="button" aria-label="HIBTAM" aria-current="false"></button>
+          <button type="button" aria-label="CIEL" aria-current="false"></button>
+          <button type="button" aria-label="MOVEON" aria-current="false"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="svc_eyebrow">Services</p>
+      <h2 class="h2" data-i18n="svc_h2">What you get</h2>
+      <p class="sub" data-i18n="svc_sub">Complete Shopify store design and development, shaped around your brand and your products.</p>
+    </div>
+    <div class="grid3">
+      <article class="svc rv"><h3 data-i18n="s1t">Shopify Store Setup</h3><ul class="ticks"><li data-i18n="s1a">Store foundation and configuration.</li><li data-i18n="s1b">Theme setup and core storefront pages.</li><li data-i18n="s1c">Preparation for the agreed launch scope.</li></ul></article>
+      <article class="svc rv"><h3 data-i18n="s2t">Brand-Focused Store Design</h3><ul class="ticks"><li data-i18n="s2a">Theme customization to match the brand.</li><li data-i18n="s2b">Consistent visual presentation.</li><li data-i18n="s2c">Responsive experience across devices.</li></ul></article>
+      <article class="svc rv"><h3 data-i18n="s3t">Product Presentation</h3><ul class="ticks"><li data-i18n="s3a">Clear product and collection organization.</li><li data-i18n="s3b">Product page customization when needed.</li><li data-i18n="s3c">Variant and color presentation improvements where required.</li></ul></article>
+      <article class="svc rv"><h3 data-i18n="s4t">Shopify Theme Customization</h3><ul class="ticks"><li data-i18n="s4a">Customize existing theme sections.</li><li data-i18n="s4b">Add or modify sections using code when necessary.</li><li data-i18n="s4c">Adapt the storefront to the brand's requirements.</li></ul></article>
+      <article class="svc rv"><h3 data-i18n="s5t">Arabic and RTL Support</h3><ul class="ticks"><li data-i18n="s5a">Arabic storefront support where required.</li><li data-i18n="s5b">Right-to-left layout adjustments.</li><li data-i18n="s5c">Typography and theme compatibility improvements.</li></ul></article>
+      <article class="svc rv"><h3 data-i18n="s6t">Store Launch Preparation</h3><ul class="ticks"><li data-i18n="s6a">Test the agreed storefront functionality.</li><li data-i18n="s6b">Review mobile usability.</li><li data-i18n="s6c">Handover and guidance for managing the store.</li></ul></article>
+    </div>
+    <p class="note rv" data-i18n="svc_note">The final scope of every project is defined in the project proposal.</p>
+  </div>
+</section>
+
+<section id="brands" class="brands-sec" aria-labelledby="brandsH">
+  <div class="wrap">
+    <p class="eyebrow brands-eyebrow" id="brandsH" data-i18n="brands_eyebrow">Brands &amp; stores I've worked with</p>
+  </div>
+  <div class="logo-marquee">
+    <div class="logo-track">
+      <ul class="logo-set">
+        <li class="logo-chip"><img src="DATA_URI" alt="NALA Kids logo" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="HIBTAM logo" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="CIEL logo" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="MOVEON logo" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="MyFlo logo" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="ThriveFit logo" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="Versus7 logo" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="Little Buddy Wear logo" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="Glowear logo" loading="lazy" decoding="async"></li>
+      </ul>
+      <ul class="logo-set" aria-hidden="true">
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="DATA_URI" alt="" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="work_eyebrow">Selected Work</p>
+      <h2 class="h2" data-i18n="work_h2">Real Shopify stores I've built</h2>
+      <p class="sub" data-i18n="work_sub">Fashion is where my portfolio is strongest, and I also discuss Shopify projects from other e-commerce niches.</p>
+    </div>
+    <p class="stats rv" data-i18n="work_stats"><bdi>11</bdi> Shopify stores built &middot; <bdi>9</bdi> currently active</p>
+    <div class="projs">
+
+      <article class="proj rv" id="p-nala">
+        <div class="proj-media"><img src="DATA_URI" alt="NALA Kids Shopify store shown on a laptop and a phone" width="900" height="619" decoding="async" data-p="nala" data-i18n-attr="alt:alt_p1"></div>
+        <div class="proj-body">
+          <p class="kicker" data-i18n="p1_cat">Kidswear / children's clothing</p>
+          <h3 data-i18n="p1_t">NALA Kids — Shopify Store Development &amp; Arabic RTL Customization</h3>
+          <p class="desc" data-i18n="p1_d">Built the Shopify store from scratch using Horizon, with Arabic language and RTL support, custom typography without an additional app, and extensive code-based theme section customization.</p>
+          <ul class="tags"><li data-i18n="p1_f1">Arabic + RTL support</li><li data-i18n="p1_f2">Font change without an extra app</li></ul>
+          <dl class="facts"><div><dt data-i18n="l_theme">Theme</dt><dd>Horizon</dd></div><div><dt data-i18n="l_role">My role</dt><dd data-i18n="role_scratch">Full store build from scratch</dd></div></dl>
+          <a class="btn btn-ghost" href="https://www.nala-kids.com/" target="_blank" rel="noopener"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="proj rv" id="p-hibtam">
+        <div class="proj-media"><img src="DATA_URI" alt="HIBTAM Shopify store shown on a laptop and a phone" width="900" height="619" decoding="async" data-p="hibtam" data-i18n-attr="alt:alt_p2"></div>
+        <div class="proj-body">
+          <p class="kicker" data-i18n="p2_cat">Fashion / women's clothing</p>
+          <h3 data-i18n="p2_t">HIBTAM — Shopify Store Development &amp; Custom Product Experience</h3>
+          <p class="desc" data-i18n="p2_d">Built the Shopify store from scratch using Horizon, customized multiple theme sections through code, linked product color options, and implemented Arabic RTL support.</p>
+          <ul class="tags"><li data-i18n="p2_f1">Linked product colors</li><li data-i18n="p2_f2">Arabic + RTL support</li></ul>
+          <dl class="facts"><div><dt data-i18n="l_theme">Theme</dt><dd>Horizon</dd></div><div><dt data-i18n="l_role">My role</dt><dd data-i18n="role_scratch">Full store build from scratch</dd></div></dl>
+          <a class="btn btn-ghost" href="https://hibtam.com/" target="_blank" rel="noopener"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="proj rv" id="p-ciel">
+        <div class="proj-media"><img src="DATA_URI" alt="CIEL Shopify store shown on a laptop and a phone" width="900" height="619" decoding="async" data-p="ciel" data-i18n-attr="alt:alt_p3"></div>
+        <div class="proj-body">
+          <p class="kicker" data-i18n="p3_cat">Women's fashion</p>
+          <h3 data-i18n="p3_t">CIEL — Shopify Store Development &amp; Product Color Navigation</h3>
+          <p class="desc" data-i18n="p3_d">Built the Shopify store from scratch using Horizon, with code-based theme customization and linked product color options to make navigating between colors easier.</p>
+          <ul class="tags"><li data-i18n="p3_f1">Linked product colors</li><li data-i18n="p3_f2">Code-based theme customization</li></ul>
+          <dl class="facts"><div><dt data-i18n="l_theme">Theme</dt><dd>Horizon</dd></div><div><dt data-i18n="l_role">My role</dt><dd data-i18n="role_scratch">Full store build from scratch</dd></div></dl>
+          <a class="btn btn-ghost" href="https://ciel-eg.com/" target="_blank" rel="noopener"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="proj rv" id="p-moveon">
+        <div class="proj-media"><img src="DATA_URI" alt="MOVEON Shopify store shown on a laptop and a phone" width="900" height="619" decoding="async" data-p="moveon" data-i18n-attr="alt:alt_p4"></div>
+        <div class="proj-body">
+          <p class="kicker" data-i18n="p4_cat">Activewear / sportswear · Kuwait</p>
+          <h3 data-i18n="p4_t">MOVEON — Shopify Store Development &amp; Color-Specific Product Images</h3>
+          <p class="desc" data-i18n="p4_d">Built the Shopify store from scratch using Minimog, with product image customization that separates images by color to improve product browsing.</p>
+          <ul class="tags"><li data-i18n="p4_f1">Product images separated by color</li></ul>
+          <dl class="facts"><div><dt data-i18n="l_theme">Theme</dt><dd>Minimog</dd></div><div><dt data-i18n="l_role">My role</dt><dd data-i18n="role_scratch">Full store build from scratch</dd></div></dl>
+          <a class="btn btn-ghost" href="https://moveonkwt.com/" target="_blank" rel="noopener"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <div class="mini-grid">
+        <a class="mini rv" href="https://myflo.online/" target="_blank" rel="noopener">
+          <span class="mini-media"><img src="DATA_URI" alt="MyFlo Shopify store shown on a laptop and a phone" width="800" height="800" loading="lazy" decoding="async" data-i18n-attr="alt:alt_f1"></span>
+          <span class="mini-body">
+            <img class="mini-logo" src="DATA_URI" alt="MyFlo logo" loading="lazy" decoding="async">
+            <span class="mini-name">MyFlo</span>
+            <span class="mini-visit"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">&#8599;</span></span>
+          </span>
+        </a>
+        <a class="mini rv" href="https://thrivefit-eg.com/" target="_blank" rel="noopener">
+          <span class="mini-media"><img src="DATA_URI" alt="ThriveFit Shopify store shown on a laptop and a phone" width="800" height="800" loading="lazy" decoding="async" data-i18n-attr="alt:alt_f2"></span>
+          <span class="mini-body">
+            <img class="mini-logo" src="DATA_URI" alt="ThriveFit logo" loading="lazy" decoding="async">
+            <span class="mini-name">ThriveFit</span>
+            <span class="mini-visit"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">&#8599;</span></span>
+          </span>
+        </a>
+        <a class="mini rv" href="https://versus7.myshopify.com/" target="_blank" rel="noopener">
+          <span class="mini-media"><img src="DATA_URI" alt="Versus7 Shopify store shown on a laptop and a phone" width="800" height="800" loading="lazy" decoding="async" data-i18n-attr="alt:alt_f3"></span>
+          <span class="mini-body">
+            <img class="mini-logo" src="DATA_URI" alt="Versus7 logo" loading="lazy" decoding="async">
+            <span class="mini-name">Versus7</span>
+            <span class="mini-visit"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">&#8599;</span></span>
+          </span>
+        </a>
+        <a class="mini rv" href="https://littlebuddywear.com/" target="_blank" rel="noopener">
+          <span class="mini-media"><img src="DATA_URI" alt="Little Buddy Wear Shopify store shown on a laptop and a phone" width="800" height="800" loading="lazy" decoding="async" data-i18n-attr="alt:alt_f4"></span>
+          <span class="mini-body">
+            <img class="mini-logo" src="DATA_URI" alt="Little Buddy Wear logo" loading="lazy" decoding="async">
+            <span class="mini-name">Little Buddy Wear</span>
+            <span class="mini-visit"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">&#8599;</span></span>
+          </span>
+        </a>
+        <a class="mini rv" href="https://shopglowear.com/" target="_blank" rel="noopener">
+          <span class="mini-media"><img src="DATA_URI" alt="Glowear Shopify store shown on a laptop and a phone" width="800" height="800" loading="lazy" decoding="async" data-i18n-attr="alt:alt_f5"></span>
+          <span class="mini-body">
+            <img class="mini-logo" src="DATA_URI" alt="Glowear logo" loading="lazy" decoding="async">
+            <span class="mini-name">Glowear</span>
+            <span class="mini-visit"><span data-i18n="visit">Visit live store</span><span aria-hidden="true">&#8599;</span></span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <p class="note rv" data-i18n="work_note">Descriptions reflect the work I implemented during each project. The store owners may have updated their stores since.</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="why_eyebrow">Why work with me</p>
+      <h2 class="h2" data-i18n="why_h2">A practical approach to building your store</h2>
+    </div>
+    <div class="why">
+      <aside class="me rv">
+        <div class="me-photo"><img src="DATA_URI" alt="Adel Atef Emam" width="800" height="800" decoding="async" data-i18n-attr="alt:alt_me"></div>
+        <div class="me-name" data-i18n="me_name">Adel Atef Emam</div>
+        <div class="me-role" data-i18n="me_role">Shopify Developer</div>
+        <div class="me-loc" data-i18n="me_loc">Based in Egypt · Working with brands in Egypt and the Gulf</div>
+        <div class="social">
+          <a href="https://wa.me/201004943581?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%83%D9%84%D9%85%20%D9%85%D8%B9%D8%A7%D9%83%20%D8%B9%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%B4%D9%88%D8%A8%D9%8A%D9%81%D8%A7%D9%8A.%20%D9%85%D9%85%D9%83%D9%86%20%D9%86%D9%86%D8%A7%D9%82%D8%B4%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%D8%9F" class="js-wa" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+          <a href="mailto:contact.adelatefemam@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6.5L20.5 7"/></svg></a>
+          <a href="https://www.linkedin.com/in/adelatefemam/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.behance.net/adelatefemam/" target="_blank" rel="noopener" aria-label="Behance" title="Behance"><span class="be" aria-hidden="true">B&#275;</span></a>
+        </div>
+      </aside>
+      <ul class="ticks rv">
+        <li data-i18n="w1">End-to-end Shopify store setup.</li>
+        <li data-i18n="w2">Experience with real fashion-brand storefronts.</li>
+        <li data-i18n="w3">Theme customization based on the brand's needs.</li>
+        <li data-i18n="w4">Practical code-based improvements when necessary.</li>
+        <li data-i18n="w5">Attention to mobile layouts and product presentation.</li>
+        <li data-i18n="w6">Clear project scope, payment terms, and handover.</li>
+        <li data-i18n="w7">Communication in Arabic and English.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="proc_eyebrow">Process</p>
+      <h2 class="h2" data-i18n="proc_h2">From first message to handover</h2>
+    </div>
+    <ol class="steps">
+      <li class="step rv"><b>01</b><h3 data-i18n="pr1t">Project Discussion</h3><p data-i18n="pr1d">Understand the brand, product catalog, target market, requirements, and business goals.</p></li>
+      <li class="step rv"><b>02</b><h3 data-i18n="pr2t">Scope and Proposal</h3><p data-i18n="pr2d">Define the work, deliverables, required theme, product setup scope, estimated timeline, project fee, and relevant exclusions.</p></li>
+      <li class="step rv"><b>03</b><h3 data-i18n="pr3t">Store Design and Development</h3><p data-i18n="pr3d">Build the storefront using a suitable theme and implement the agreed customizations.</p></li>
+      <li class="step rv"><b>04</b><h3 data-i18n="pr4t">Review and Refinement</h3><p data-i18n="pr4d">Review the agreed pages and features, collect feedback, and make the revisions covered by the scope.</p></li>
+      <li class="step rv"><b>05</b><h3 data-i18n="pr5t">Final Payment and Handover</h3><p data-i18n="pr5d">Collect the remaining payment upon delivery, hand over the store, and explain relevant management tasks.</p></li>
+    </ol>
+    <p class="pay rv" data-i18n="proc_pay">Standard payment: 50% upfront to begin the project, 50% upon delivery.</p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap center rv">
+    <p class="eyebrow" data-i18n="rev_eyebrow">Reviews</p>
+    <h2 class="h2" data-i18n="rev_h2">What clients say</h2>
+    <p class="sub" data-i18n="rev_sub">Real feedback from the brands I've worked with.</p>
+  </div>
+  <div class="rev-stage">
+    <button class="rev-btn prev" id="revPrev" type="button" aria-label="Previous reviews" data-i18n-attr="aria-label:rev_prev">&#8249;</button>
+    <div class="rev-wrap" id="revWrap" tabindex="0" role="region" aria-label="Client reviews" data-i18n-attr="aria-label:rev_region"><div class="rev-track" id="revTrack"></div></div>
+    <button class="rev-btn next" id="revNext" type="button" aria-label="Next reviews" data-i18n-attr="aria-label:rev_next">&#8250;</button>
+  </div>
+</section>
+
+<section id="investment">
+  <div class="wrap">
+    <div class="invest rv">
+      <div>
+        <p class="eyebrow" data-i18n="inv_eyebrow">Project Investment</p>
+        <h2 class="h2" data-i18n="inv_h2">Every Brand Needs a Different Shopify Setup</h2>
+        <p data-i18n="inv_p">I provide tailored project quotes based on your requirements. Before development begins, we'll agree on the scope, deliverables, timeline, and total fee.</p>
+        <a class="btn btn-wa js-wa" href="https://wa.me/201004943581?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%83%D9%84%D9%85%20%D9%85%D8%B9%D8%A7%D9%83%20%D8%B9%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%B4%D9%88%D8%A8%D9%8A%D9%81%D8%A7%D9%8A.%20%D9%85%D9%85%D9%83%D9%86%20%D9%86%D9%86%D8%A7%D9%82%D8%B4%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%D8%9F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="inv_cta">Discuss Your Project</span></a>
+      </div>
+      <div>
+        <h3 data-i18n="inv_list_t">The project fee depends on:</h3>
+        <ul class="ticks">
+          <li data-i18n="f1">Required pages and sections</li>
+          <li data-i18n="f2">Product catalog size and setup</li>
+          <li data-i18n="f3">Theme selection and licensing</li>
+          <li data-i18n="f4">Required theme customizations</li>
+          <li data-i18n="f5">Additional functionality</li>
+          <li data-i18n="f6">Project complexity and scope</li>
+        </ul>
+        <p class="lic" data-i18n="inv_lic">Paid theme licensing costs are separate from my development fee unless the proposal explicitly states otherwise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq-layout">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="faq_eyebrow">FAQ</p>
+      <h2 class="h2" data-i18n="faq_h2">Frequently asked questions</h2>
+    </div>
+    <div class="faq rv">
+      <details name="faq"><summary data-i18n="q1">Do you only work with fashion brands?</summary><p data-i18n="a1">No. Fashion is the category represented most strongly in my current portfolio, but I can discuss Shopify projects from other e-commerce niches based on their requirements.</p></details>
+      <details name="faq"><summary data-i18n="q2">Do you build Shopify stores from scratch?</summary><p data-i18n="a2">Yes. I build Shopify storefronts from the initial setup through design, development, and the agreed launch preparation.</p></details>
+      <details name="faq"><summary data-i18n="q3">Do you use premium themes or custom code?</summary><p data-i18n="a3">I select a suitable theme for the project and customize it as needed. When the requirements call for additional functionality, I can implement code-based customizations. Theme licensing is separate from my development fee unless otherwise agreed.</p></details>
+      <details name="faq"><summary data-i18n="q4">Is the paid theme included in the price?</summary><p data-i18n="a4">Paid theme licensing is separate from the development fee unless explicitly included in the proposal.</p></details>
+      <details name="faq"><summary data-i18n="q5">Do you add products?</summary><p data-i18n="a5">Product setup can be included within an agreed quantity and scope. The number of products and the required data should be confirmed before the project begins.</p></details>
+      <details name="faq"><summary data-i18n="q6">How long does a project take?</summary><p data-i18n="a6">The timeline depends on the project's complexity, catalog, required customizations, and the timely availability of content and feedback. I'll provide an estimated timeline in the proposal.</p></details>
+      <details name="faq"><summary data-i18n="q7">What are the payment terms?</summary><p data-i18n="a7">My standard payment structure is 50% upfront and 50% upon delivery.</p></details>
+      <details name="faq"><summary data-i18n="q8">Are revisions included?</summary><p data-i18n="a8">Revisions are defined by the agreed project scope. The proposal will clarify what is included.</p></details>
+      <details name="faq"><summary data-i18n="q9">Do you provide support after delivery?</summary><p data-i18n="a9">I provide a handover when the project is completed. Any applicable bug-fix period and its conditions will be stated in the proposal. Ongoing maintenance is not automatically included.</p></details>
+      <details name="faq"><summary data-i18n="q10">How do I get a quote?</summary><p data-i18n="a10">Send me a message on WhatsApp with a short description of your brand, products, target market, and what you need from your Shopify store.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final rv">
+      <h2 class="h2" data-i18n="cta_h2">Planning to Launch Your Shopify Store?</h2>
+      <p class="sub" data-i18n="cta_p">Tell me about your brand and what you need. We'll discuss the requirements and determine the right scope for your project.</p>
+      <a class="btn btn-wa js-wa" href="https://wa.me/201004943581?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%83%D9%84%D9%85%20%D9%85%D8%B9%D8%A7%D9%83%20%D8%B9%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%B4%D9%88%D8%A8%D9%8A%D9%81%D8%A7%D9%8A.%20%D9%85%D9%85%D9%83%D9%86%20%D9%86%D9%86%D8%A7%D9%82%D8%B4%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%D8%9F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="cta_final">Discuss Your Project on WhatsApp</span></a>
+      <div><a class="mail" href="mailto:contact.adelatefemam@gmail.com"><span data-i18n="cta_mail">Prefer email?</span> <bdi>contact.adelatefemam@gmail.com</bdi></a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr">2026</span> Adel Atef Emam · <span data-i18n="foot_role">Shopify Developer</span></span>
+    <a href="#top" data-i18n="foot_top">Back to top</a>
+  </div>
+</footer>
+
+<a class="js-wa" id="waFloat" href="https://wa.me/201004943581?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%83%D9%84%D9%85%20%D9%85%D8%B9%D8%A7%D9%83%20%D8%B9%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%B4%D9%88%D8%A8%D9%8A%D9%81%D8%A7%D9%8A.%20%D9%85%D9%85%D9%83%D9%86%20%D9%86%D9%86%D8%A7%D9%82%D8%B4%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%D8%9F" target="_blank" rel="noopener" aria-label="WhatsApp" data-i18n-attr="aria-label:wa_short"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Review"><img alt=""></div>
+
+<script>
+(function(){
+"use strict";
+var REVIEWS=[{"s":"DATA_URI","w":1080,"h":736},{"s":"DATA_URI","w":796,"h":800},{"s":"DATA_URI","w":1080,"h":522},{"s":"DATA_URI","w":745,"h":800},{"s":"DATA_URI","w":1079,"h":783},{"s":"DATA_URI","w":1080,"h":796},{"s":"DATA_URI","w":784,"h":800},{"s":"DATA_URI","w":1080,"h":498},{"s":"DATA_URI","w":715,"h":800},{"s":"DATA_URI","w":646,"h":800},{"s":"DATA_URI","w":1080,"h":594},{"s":"DATA_URI","w":1080,"h":644},{"s":"DATA_URI","w":1080,"h":579},{"s":"DATA_URI","w":1020,"h":800},{"s":"DATA_URI","w":401,"h":800},{"s":"DATA_URI","w":1079,"h":632}];
+var WA="201004943581";
+var MSG={
+  en:"Hi! I checked out your work and I'd like to discuss a Shopify store for my brand. Can we talk about the details?",
+  ar:"أهلًا، شوفت شغلك وحابب أتكلم معاك عن متجر البراند بتاعي على شوبيفاي. ممكن نناقش التفاصيل؟"
+};
+var META={
+  en:{title:"Adel Atef Emam | Shopify Store Design & Development",desc:"Shopify store design and development for growing brands. Explore real storefront projects, theme customization, product presentation, and Arabic RTL development."},
+  ar:{title:"عادل عاطف إمام | تصميم وتطوير متاجر شوبيفاي",desc:"تصميم وتطوير متاجر شوبيفاي للبراندات النامية، مع تخصيص الثيمات وتحسين عرض المنتجات ودعم العربية واتجاه RTL حسب احتياجات المشروع."}
+};
+var AR={"skip":"تخطي إلى المحتوى","brand_role":"مطور شوبيفاي","nav_services":"الخدمات","nav_work":"أعمال مختارة","nav_process":"خطوات التنفيذ","nav_faq":"الأسئلة الشائعة","wa_short":"واتساب","menu":"القائمة","hero_eyebrow":"مطور شوبيفاي","hero_h1":"متاجر شوبيفاي احترافية تناسب البراند بتاعك","hero_lead":"بصمم وبطور متاجر شوبيفاي تناسب هوية البراند واحتياجاته، مع عرض واضح للمنتجات، وتصميم متوافق مع الموبايل، وإمكانية تنفيذ تخصيصات برمجية حسب احتياج المشروع.","hero_cred":"عندي خبرة عملية في بناء متاجر لبراندات الفاشون، وبقدر أناقش مشاريع أنشطة مختلفة في التجارة الإلكترونية حسب متطلبات كل مشروع.","cta_primary":"ناقش مشروعك على واتساب","cta_secondary":"شوف نماذج من أعمالي","chip1":"أعمال في التجارة الإلكترونية للفاشون","chip2":"مفتوح لأي نشاط تجاري","chip3":"عربي وإنجليزي · دعم RTL","hv_group":"المشاريع المختارة","alt_p1":"متجر NALA Kids على شوبيفاي معروض على لابتوب وموبايل","alt_p2":"متجر HIBTAM على شوبيفاي معروض على لابتوب وموبايل","alt_p3":"متجر CIEL على شوبيفاي معروض على لابتوب وموبايل","alt_p4":"متجر MOVEON على شوبيفاي معروض على لابتوب وموبايل","svc_eyebrow":"الخدمات","svc_h2":"إيه اللي هتحصل عليه","svc_sub":"تصميم وتطوير متجر شوبيفاي متكامل، مبني على هوية البراند ومنتجاته.","s1t":"إعداد متجر شوبيفاي","s1a":"تجهيز أساس المتجر وإعداداته.","s1b":"إعداد الثيم والصفحات الأساسية للمتجر.","s1c":"التجهيز للإطلاق حسب النطاق المتفق عليه.","s2t":"تصميم متجر يعبر عن البراند","s2a":"تخصيص الثيم ليناسب هوية البراند.","s2b":"مظهر بصري متناسق.","s2c":"تجربة متوافقة مع كل الأجهزة.","s3t":"عرض المنتجات","s3a":"تنظيم واضح للمنتجات والتصنيفات.","s3b":"تخصيص صفحة المنتج عند الحاجة.","s3c":"تحسين عرض الأنواع والألوان حسب الحاجة.","s4t":"تخصيص ثيمات شوبيفاي","s4a":"تعديل أقسام الثيم الحالية.","s4b":"إضافة أو تعديل أقسام بالكود عند الضرورة.","s4c":"تطويع المتجر ليناسب احتياجات البراند.","s5t":"دعم العربية واتجاه RTL","s5a":"دعم المتجر باللغة العربية عند الحاجة.","s5b":"ضبط التصميم لاتجاه الكتابة من اليمين لليسار.","s5c":"تحسين الخطوط وتوافق الثيم.","s6t":"التجهيز للإطلاق","s6a":"اختبار وظائف المتجر المتفق عليها.","s6b":"مراجعة تجربة الاستخدام على الموبايل.","s6c":"تسليم المتجر وشرح طريقة إدارته.","svc_note":"نطاق كل مشروع بيتحدد بشكل نهائي في عرض السعر.","work_eyebrow":"أعمال مختارة","work_h2":"متاجر شوبيفاي حقيقية نفذتها","work_sub":"الفاشون هو المجال اللي عندي فيه أقوى نماذج أعمال، وبناقش كمان مشاريع شوبيفاي في مجالات تانية من التجارة الإلكترونية.","l_theme":"الثيم","l_role":"دوري","role_scratch":"بناء المتجر بالكامل من الصفر","visit":"زيارة المتجر","p1_cat":"ملابس أطفال","p1_t":"NALA Kids — تطوير متجر شوبيفاي ودعم العربية واتجاه RTL","p1_d":"أنشأت متجر NALA Kids من البداية باستخدام Horizon، مع دعم اللغة العربية واتجاه RTL، وتغيير الخط بدون تطبيق إضافي، وتخصيص أجزاء عديدة من الثيم بالكود.","p1_f1":"دعم العربية + RTL","p1_f2":"تغيير الخط بدون تطبيق إضافي","p2_cat":"أزياء / ملابس نسائية","p2_t":"HIBTAM — تطوير متجر شوبيفاي وتجربة منتج مخصصة","p2_d":"أنشأت متجر HIBTAM من البداية باستخدام Horizon، مع تخصيص أجزاء متعددة من الثيم بالكود، وربط ألوان المنتج الواحد، ودعم اللغة العربية واتجاه RTL.","p2_f1":"ربط ألوان المنتج الواحد","p2_f2":"دعم العربية + RTL","p3_cat":"أزياء نسائية","p3_t":"CIEL — تطوير متجر شوبيفاي وتنقل سهل بين ألوان المنتج","p3_d":"أنشأت متجر CIEL من البداية باستخدام Horizon، مع تخصيص أجزاء عديدة من الثيم بالكود وربط ألوان المنتج الواحد لتسهيل الانتقال بين الألوان.","p3_f1":"ربط ألوان المنتج الواحد","p3_f2":"تخصيص الثيم بالكود","p4_cat":"ملابس رياضية · الكويت","p4_t":"MOVEON — تطوير متجر شوبيفاي وصور منتجات مخصصة حسب اللون","p4_d":"أنشأت متجر MOVEON من البداية باستخدام Minimog، مع تخصيص عرض صور المنتجات لفصل الصور حسب اللون المختار.","p4_f1":"فصل صور المنتج حسب اللون","work_note":"الوصف بيعكس الشغل اللي نفذته أثناء كل مشروع، وممكن أصحاب المتاجر يكونوا عدلوا في متاجرهم بعد كده.","why_eyebrow":"ليه تشتغل معايا","why_h2":"طريقة عملية في بناء متجرك","me_name":"عادل عاطف إمام","me_role":"مطور شوبيفاي","me_loc":"من مصر · بشتغل مع براندات في مصر والخليج","alt_me":"عادل عاطف إمام","w1":"إعداد متجر شوبيفاي بالكامل من البداية للنهاية.","w2":"خبرة في متاجر براندات فاشون حقيقية.","w3":"تخصيص الثيم حسب احتياج البراند.","w4":"تحسينات عملية بالكود عند الحاجة.","w5":"اهتمام بتصميم الموبايل وعرض المنتجات.","w6":"نطاق شغل ودفعات وتسليم واضحين.","w7":"تواصل بالعربي والإنجليزي.","proc_eyebrow":"خطوات التنفيذ","proc_h2":"من أول رسالة لحد التسليم","pr1t":"مناقشة المشروع","pr1d":"بفهم البراند وكتالوج المنتجات والسوق المستهدف والمتطلبات وأهداف البزنس.","pr2t":"النطاق وعرض السعر","pr2d":"بنحدد الشغل والمخرجات والثيم المطلوب ونطاق إضافة المنتجات والمدة المتوقعة وتكلفة المشروع وأي استثناءات.","pr3t":"تصميم المتجر وتطويره","pr3d":"بنفذ المتجر على ثيم مناسب وبطبق التخصيصات المتفق عليها.","pr4t":"المراجعة والتعديل","pr4d":"بنراجع الصفحات والوظائف المتفق عليها، وبناخد ملاحظاتك وبنطبق التعديلات اللي يغطيها نطاق المشروع.","pr5t":"الدفعة الأخيرة والتسليم","pr5d":"بتتسدد الدفعة المتبقية عند التسليم، وبسلمك المتجر وأشرحلك مهام الإدارة المهمة.","proc_pay":"الدفع المعتاد: <bdi>50%</bdi> مقدم لبدء المشروع و<bdi>50%</bdi> عند التسليم.","rev_eyebrow":"التقييمات","rev_h2":"آراء العملاء","rev_sub":"آراء حقيقية من البراندات اللي اشتغلت معاها.","rev_prev":"التقييمات السابقة","rev_next":"التقييمات التالية","rev_region":"آراء العملاء","inv_eyebrow":"تكلفة المشروع","inv_h2":"كل براند يحتاج إعداد شوبيفاي مختلف","inv_p":"كل براند له احتياجات مختلفة، لذلك تكلفة المشروع بتتحدد حسب نطاق الشغل والوظائف المطلوبة. قبل التنفيذ، بنتفق بوضوح على المطلوب والمدة المتوقعة والتكلفة النهائية.","inv_cta":"ناقش مشروعك","inv_list_t":"تكلفة المشروع بتعتمد على:","f1":"الصفحات والأقسام المطلوبة","f2":"حجم كتالوج المنتجات وإعداده","f3":"اختيار الثيم وترخيصه","f4":"تخصيصات الثيم المطلوبة","f5":"وظائف إضافية","f6":"تعقيد المشروع ونطاقه","inv_lic":"تكلفة الثيم المدفوع منفصلة عن أتعاب تنفيذ المتجر، ما لم يتم الاتفاق على غير ذلك.","faq_eyebrow":"الأسئلة الشائعة","faq_h2":"أسئلة بتتكرر كتير","q1":"هل بتشتغل مع براندات الفاشون بس؟","a1":"لا. الفاشون هو المجال اللي عندي فيه أقوى نماذج أعمال حاليا، لكن أقدر أناقش مشاريع شوبيفاي لأنشطة أخرى حسب متطلبات المشروع.","q2":"هل بتبني متاجر شوبيفاي من الصفر؟","a2":"أيوه، ببدأ من إعداد متجر شوبيفاي وتصميمه وتطويره لحد التجهيز للإطلاق حسب نطاق المشروع المتفق عليه.","q3":"بتستخدم ثيمات مدفوعة ولا كود مخصص؟","a3":"بختار ثيم مناسب للمشروع وبخصصه حسب الحاجة. ولو المتطلبات محتاجة وظائف إضافية، بنفذها بالكود. وترخيص الثيم منفصل عن أتعابي ما لم يتم الاتفاق على غير ذلك.","q4":"هل الثيم المدفوع داخل في السعر؟","a4":"ترخيص الثيم المدفوع منفصل عن أتعاب التنفيذ، إلا لو اتذكر صراحة إنه مشمول في عرض السعر.","q5":"هل بتضيف المنتجات؟","a5":"إضافة المنتجات ممكن تدخل في المشروع ضمن عدد ونطاق متفق عليهم. لازم نحدد عدد المنتجات والبيانات المطلوبة قبل بداية المشروع.","q6":"المشروع بياخد قد إيه؟","a6":"المدة بتعتمد على تعقيد المشروع وحجم الكتالوج والتخصيصات المطلوبة وسرعة توفير المحتوى والرد على الملاحظات. هحدد مدة تقديرية في عرض السعر.","q7":"إزاي بيتم الدفع؟","a7":"نظام الدفع المعتاد عندي <bdi>50%</bdi> مقدم لبدء المشروع و<bdi>50%</bdi> عند التسليم.","q8":"هل التعديلات مشمولة؟","a8":"التعديلات بتتحدد حسب نطاق المشروع المتفق عليه، وعرض السعر هيوضح اللي مشمول.","q9":"هل في دعم بعد التسليم؟","a9":"بسلمك المتجر وأشرحلك الأساسيات عند الانتهاء. وأي فترة لإصلاح الأخطاء بعد التسليم وشروطها هتتحدد في عرض السعر. الصيانة الشهرية المستمرة مش مشمولة تلقائيا.","q10":"إزاي أعرف تكلفة مشروعي؟","a10":"ابعتلي على واتساب وصف مختصر للبراند والمنتجات والسوق المستهدف وإيه اللي محتاجه من متجرك على شوبيفاي.","cta_h2":"جاهز تبدأ متجرك على شوبيفاي؟","cta_p":"احكيلي عن البراند بتاعك واحتياجاتك، ونحدد مع بعض نطاق المشروع المناسب.","cta_final":"ابدأ النقاش على واتساب","cta_mail":"تفضل الإيميل؟","foot_role":"مطور شوبيفاي","foot_top":"الرجوع للأعلى","work_stats":"تم بناء <bdi>11</bdi> متجر شوبيفاي · <bdi>9</bdi> منها متاجر نشطة حاليًا","brands_eyebrow":"براندات اشتغلت معاها","alt_f1":"متجر MyFlo على شوبيفاي معروض على لابتوب وموبايل","alt_f2":"متجر ThriveFit على شوبيفاي معروض على لابتوب وموبايل","alt_f3":"متجر Versus7 على شوبيفاي معروض على لابتوب وموبايل","alt_f4":"متجر Little Buddy Wear على شوبيفاي معروض على لابتوب وموبايل","alt_f5":"متجر Glowear على شوبيفاي معروض على لابتوب وموبايل"};
+
+/* ---------- language ---------- */
+var lang="en",missing=[];
+var i18n=document.querySelectorAll("[data-i18n]");
+var attrs=document.querySelectorAll("[data-i18n-attr]");
+i18n.forEach(function(el){el.dataset.en=el.innerHTML});
+attrs.forEach(function(el){
+  el.dataset.i18nAttr.split(";").forEach(function(p){
+    var a=p.split(":")[0];el.dataset["en_"+a.replace("-","_")]=el.getAttribute(a)||"";
+  });
+});
+function waHref(l){return "https://wa.me/"+WA+"?text="+encodeURIComponent(MSG[l])}
+function setLang(l){
+  lang=l;
+  var h=document.documentElement;h.lang=l;h.dir=l==="ar"?"rtl":"ltr";
+  i18n.forEach(function(el){
+    var k=el.dataset.i18n,v=el.dataset.en;
+    if(l==="ar"){if(AR[k]!==undefined)v=AR[k];else missing.push(k)}
+    el.innerHTML=v;
+  });
+  attrs.forEach(function(el){
+    el.dataset.i18nAttr.split(";").forEach(function(p){
+      var parts=p.split(":"),a=parts[0],k=parts[1],v=el.dataset["en_"+a.replace("-","_")];
+      if(l==="ar"){if(AR[k]!==undefined)v=AR[k];else missing.push(k)}
+      el.setAttribute(a,v);
+    });
+  });
+  document.querySelectorAll(".js-wa").forEach(function(a){a.href=waHref(l)});
+  document.title=META[l].title;
+  var md=document.querySelector('meta[name="description"]');if(md)md.setAttribute("content",META[l].desc);
+  var lb=document.getElementById("langBtn");
+  lb.textContent=l==="ar"?"English":"العربية";
+  lb.lang=l==="ar"?"en":"ar";
+  lb.setAttribute("aria-label",l==="ar"?"Switch to English":"التبديل إلى العربية");
+  document.querySelectorAll(".rev img").forEach(function(im){im.alt=l==="ar"?"صورة تقييم من عميل":"Client review screenshot"});
+  updateCap();
+  try{localStorage.setItem("lang",l)}catch(e){}
+}
+document.getElementById("langBtn").addEventListener("click",function(){setLang(lang==="en"?"ar":"en")});
+
+/* ---------- mobile menu ---------- */
+var nav=document.getElementById("nav"),mb=document.getElementById("menuBtn");
+function closeMenu(){nav.classList.remove("open");mb.setAttribute("aria-expanded","false")}
+mb.addEventListener("click",function(){var o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",o?"true":"false")});
+nav.addEventListener("click",function(e){if(e.target.tagName==="A")closeMenu()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMenu()});
+window.addEventListener("resize",function(){if(window.innerWidth>900)closeMenu()});
+
+/* ---------- hero: rotate the real project mockups ---------- */
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var hv=[].slice.call(document.querySelectorAll(".hv-img"));
+var dots=[].slice.call(document.querySelectorAll(".hv-dots button"));
+var cap=document.getElementById("hvCap");
+var PROJ=[["nala","NALA Kids","Horizon"],["hibtam","HIBTAM","Horizon"],["ciel","CIEL","Horizon"],["moveon","MOVEON","Minimog"]];
+hv.forEach(function(im){var src=document.querySelector('.proj-media img[data-p="'+im.dataset.p+'"]');if(src)im.src=src.src});
+var hi=0,timer=null;
+function updateCap(){
+  var p=PROJ[hi];
+  cap.textContent=lang==="ar"?p[1]+" · ثيم "+p[2]:p[1]+" · "+p[2]+" theme";
+  cap.setAttribute("href","#p-"+p[0]);
+}
+function show(i){
+  hi=i;
+  hv.forEach(function(im,k){im.classList.toggle("on",k===i)});
+  dots.forEach(function(d,k){d.setAttribute("aria-current",k===i?"true":"false")});
+  updateCap();
+}
+function startRot(){if(reduce)return;stopRot();timer=setInterval(function(){show((hi+1)%PROJ.length)},5000)}
+function stopRot(){if(timer){clearInterval(timer);timer=null}}
+dots.forEach(function(d,k){d.addEventListener("click",function(){show(k);startRot()})});
+var hvBox=document.querySelector(".hv");
+hvBox.addEventListener("mouseenter",stopRot);hvBox.addEventListener("mouseleave",startRot);
+hvBox.addEventListener("focusin",stopRot);hvBox.addEventListener("focusout",startRot);
+startRot();
+
+/* ---------- reviews: infinite auto carousel (drag / swipe / arrows) ---------- */
+var wrap=document.getElementById("revWrap"),track=document.getElementById("revTrack");
+var lbEl=document.getElementById("lb"),lbImg=lbEl.querySelector("img");
+var moved=false;
+for(var c=0;c<3;c++){
+  REVIEWS.forEach(function(r){
+    var d=document.createElement("div");
+    d.className="rev";d.style.aspectRatio=r.w+"/"+r.h;
+    if(c)d.setAttribute("aria-hidden","true");
+    var im=document.createElement("img");
+    im.src=r.s;im.alt="Client review screenshot";im.decoding="async";im.draggable=false;
+    d.appendChild(im);
+    d.addEventListener("click",function(){if(moved)return;lbImg.src=r.s;lbImg.alt=im.alt;lbEl.classList.add("open")});
+    track.appendChild(d);
+  });
+}
+lbEl.addEventListener("click",function(){lbEl.classList.remove("open")});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")lbEl.classList.remove("open")});
+var SPEED=45,unit=0,pos=0,last=0,hold=0,hovering=false,dragging=false,wasActive=false;
+function measure(){var u=track.scrollWidth/3;if(u>0)unit=u}
+function initCar(){measure();if(unit>0){wrap.scrollLeft=unit;pos=unit}}
+function pause(ms){hold=performance.now()+ms}
+initCar();
+window.addEventListener("load",function(){var was=unit;measure();if(was===0||Math.abs(unit-was)>1){wrap.scrollLeft=unit;pos=unit}});
+window.addEventListener("resize",measure);
+function tick(t){
+  var dt=Math.min(t-last,50)/1000;last=t;
+  var active=!reduce&&!hovering&&!dragging&&t>hold&&unit>0;
+  if(active){if(!wasActive)pos=wrap.scrollLeft;pos+=SPEED*dt;wrap.scrollLeft=pos}
+  wasActive=active;
+  if(unit>0){var sl=wrap.scrollLeft;
+    if(sl>=2.2*unit){wrap.scrollLeft=sl-unit;pos-=unit}
+    else if(sl<0.3*unit){wrap.scrollLeft=sl+unit;pos+=unit}}
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+wrap.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")hovering=true});
+wrap.addEventListener("pointerleave",function(e){if(e.pointerType==="mouse"){hovering=false;pause(600)}});
+var sx=0,ss=0;
+wrap.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse"||e.button!==0)return;dragging=true;moved=false;sx=e.clientX;ss=wrap.scrollLeft;wrap.classList.add("dragging")});
+window.addEventListener("pointermove",function(e){if(!dragging)return;var dx=e.clientX-sx;if(Math.abs(dx)>5)moved=true;wrap.scrollLeft=ss-dx});
+window.addEventListener("pointerup",function(){if(!dragging)return;dragging=false;wrap.classList.remove("dragging");pause(1500);setTimeout(function(){moved=false},0)});
+wrap.addEventListener("touchstart",function(){pause(4000)},{passive:true});
+wrap.addEventListener("touchend",function(){pause(2500)},{passive:true});
+wrap.addEventListener("wheel",function(){pause(2500)},{passive:true});
+wrap.addEventListener("keydown",function(e){pause(3000);if(e.key==="ArrowRight")nudge(1);if(e.key==="ArrowLeft")nudge(-1)});
+function nudge(dir){pause(3500);wrap.scrollBy({left:dir*Math.min(window.innerWidth*0.7,520),behavior:reduce?"auto":"smooth"})}
+document.getElementById("revPrev").addEventListener("click",function(){nudge(-1)});
+document.getElementById("revNext").addEventListener("click",function(){nudge(1)});
+
+/* ---------- reveal on scroll ---------- */
+var rv=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window&&!reduce){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.08});
+  rv.forEach(function(el){io.observe(el)});
+}else{rv.forEach(function(el){el.classList.add("in")})}
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+/* ---------- floating whatsapp: hide while a primary CTA or the footer is on screen ---------- */
+var waFloat=document.getElementById("waFloat");
+if(waFloat&&"IntersectionObserver" in window){
+  var waVis=0;
+  var waIO=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting)waVis++;else if(waVis>0)waVis--});
+    waFloat.classList.toggle("hide",waVis>0);
+  },{threshold:.15});
+  [document.querySelector(".hero .js-wa"),document.querySelector("#contact .js-wa"),document.querySelector("footer")].forEach(function(t){if(t)waIO.observe(t)});
+}
+
+/* ---------- init ---------- */
+var saved=null;try{saved=localStorage.getItem("lang")}catch(e){}
+setLang(saved==="en"?"en":"ar");
+window.__i18nMissing=missing;
+})();
+</script>
+</body>
+</html>
